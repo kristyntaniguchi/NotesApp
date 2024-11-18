@@ -1,5 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Gray scale -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="lightGrey">#D3D3D3</color>
+    <color name="stoneGrey">#9E9E9E</color>
+    <color name="charcoalGrey">#616161</color>
+    <color name="deepSlateGrey">#455A64</color>
+    <color name="darkSlateGray">#2F4F4F</color>
+    <color name="dimGray">#696969</color>
+    <color name="slateGray">#708090</color>
+    <color name="gray">#808080</color>
+    <color name="lightSlateGray">#778899</color>
+    <color name="darkGray">#A9A9A9</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="gainsboro">#DCDCDC</color>
+    <color name="snow">#FFFAFA</color>
+    <color name="honeydew">#F0FFF0</color>
+    <color name="mintCream">#F5FFFA</color>
+    <color name="azure">#F0FFFF</color>
+    <color name="aliceBlue">#F0F8FF</color>
+    <color name="ghostWhite">#F8F8FF</color>
+    <color name="whiteSmoke">#F5F5F5</color>
+    <color name="seaShell">#FFF5EE</color>
+    <color name="beige">#F5F5DC</color>
+    <color name="oldLace">#FDF5E6</color>
+    <color name="floralWhite">#FFFAF0</color>
+    <color name="ivory">#FFFFF0</color>
+    <color name="antiqueWhite">#FAEBD7</color>
+    <color name="linen">#FAF0E6</color>
+    <color name="mistyRose">#FFE4E1</color>
+
+    <!-- Reds and Pinks -->
+    <color name="red">#FF0000</color>
+    <color name="tomatoRed">#F44336</color>
+    <color name="crimsonRed">#D32F2F</color>
+    <color name="rosePink">#E91E63</color>
+    <color name="deepRose">#C2185B</color>
+    <color name="paleVioletRed">#DB7093</color>
+    <color name="lavenderBlush">#FFF0F5</color>
+    <color name="lightPink">#FFB6C1</color>
+    <color name="teaRose">#F4C2C2</color>
+
+    <!-- Purples -->
+    <color name="brightPurple">#9C27B0</color>
+    <color name="royalPurple">#7B1FA2</color>
+    <color name="darkViolet">#673AB7</color>
+    <color name="midnightPurple">#512DA8</color>
+    <color name="rebeccaPurple">#663399</color>
+    <color name="blueViolet">#8A2BE2</color>
+    <color name="indigo">#4B0082</color>
+    <color name="purple">#800080</color>
+    <color name="darkMagenta">#8B008B</color>
+    <color name="darkOrchid">#9932CC</color>
+    <color name="magenta">#FF00FF</color>
+    <color name="mediumPurple">#9370DB</color>
+    <color name="mediumOrchid">#BA55D3</color>
+    <color name="softLavender">#d1c4e9</color>
+
+    <!-- Blues -->
+    <color name="navyBlue">#303F9F</color>
+    <color name="skyBlue">#2196F3</color>
+    <color name="oceanBlue">#1976D2</color>
+    <color name="zzureBlue">#03A9F4</color>
+    <color name="deepAzure">#0288D1</color>
+    <color name="blue">#0000FF</color>
+    <color name="cornflowerBlue">#6495ED</color>
+    <color name="navy">#000080</color>
+    <color name="royalBlue">#4169E1</color>
+    <color name="slateBlueGrey">#607D8B</color>
+
+
+    <!-- Cyan and Teals -->
+    <color name="brightCyan">#00BCD4</color>
+    <color name="deepCyan">#0097A7</color>
+    <color name="turquoise">#009688</color>
+    <color name="deepTurquoise">#00796B</color>
+    <color name="teal">#008080</color>
+
+    <!-- Greens -->
+    <color name="grassGreen">#4CAF50</color>
+    <color name="forestGreen">#388E3C</color>
+    <color name="mintGreen">#8BC34A</color>
+    <color name="oliveGreen">#689F38</color>
+    <color name="seaGreen">#2E8B57</color>
+    <color name="sageGreen">#9CAF88</color>
+    <color name="lightSage">#BCB88A</color>
+    <color name="darkSage">#657459</color>
+    <color name="greyedSage">#8A9A8F</color>
+    <color name="warmSage">#B2AC88</color>
+    <color name="dustySage">#AEB6A5</color>
+    <color name="sageMist">#CCD5AE</color>
+    <color name="deepSage">#567568</color>
+    <color name="paleSage">#DADEC9</color>
+    <color name="mossySage">#8B9B7C</color>
+    <color name="seafoam">#98FFE0</color>
+    <color name="lightSeafoam">#C3FFE9</color>
+    <color name="darkSeafoam">#71BBA4</color>
+    <color name="seafoamMist">#B3E6D5</color>
+    <color name="seafoamGreen">#98FF98</color>
+    <color name="paleSeafoam">#DEFFF2</color>
+    <color name="deepSeafoam">#4ECCA3</color>
+    <color name="softSeafoam">#A7E8D0</color>
+    <color name="brightSeafoam">#7FFFD4</color>
+    <color name="mintSeafoam">#89EFC0</color>
+    <color name="sageSeafoamLight">#B8D8BE</color>
+    <color name="sageSeafoamMedium">#8FC1A9</color>
+    <color name="sageSeafoamDark">#68967B</color>
+
+    <!-- Yellows -->
+    <color name="lemonChiffon">#FFFACD</color>
+    <color name="limeYellow">#CDDC39</color>
+    <color name="oliveYellow">#AFB42B</color>
+    <color name="brightYellow">#FFEB3B</color>
+    <color name="goldenYellow">#FBC02D</color>
+    <color name="marigold">#FFC107</color>
+    <color name="deepGold">#FFA000</color>
+
+    <!-- Oranges -->
+    <color name="orange">#FFA500</color>
+    <color name="brightOrange">#FF9800</color>
+    <color name="burntOrange">#F57C00</color>
+    <color name="coralOrange">#FF5722</color>
+    <color name="deepCoral">#E64A19</color>
+    <color name="coral">#FF7F50</color>
+    <color name="salmon">#FA8072</color>
+    <color name="lightSalmon">#FFA07A</color>
+    <color name="peachPuff">#FFDAB9</color>
+
+
+    <!-- Browns and Neutrals-->
+    <color name="chocolateBrown">#795548</color>
+    <color name="coffeeBrown">#5D4037</color>
+    <color name="sandyBrown">#F4A460</color>
+    <color name="navajoWhite">#FFDEAD</color>
+    <color name="wheat">#F5DEB3</color>
+    <color name="burlyWood">#DEB887</color>
+
+    <!-- Pastels -->
+    <color name="pastelPink">#FFB5C5</color>
+    <color name="pastelOrange">#FFB347</color>
+    <color name="pastelYellow">#FDFD96</color>
+    <color name="pastelGreen">#98FB98</color>
+    <color name="pastelBlue">#87CEEB</color>
+    <color name="pastelPurple">#CBC3E3</color>
+    <color name="pastelMint">#98FF98</color>
+    <color name="pastelLavender">#E6E6FA</color>
+
+    <!-- Deep Colors -->
+    <color name="deepMaroon">#800000</color>
+    <color name="deepBurgundy">#900020</color>
+    <color name="deepPlum">#5C246E</color>
+    <color name="deepIndigo">#2E0854</color>
+    <color name="deepSapphire">#082567</color>
+    <color name="deepEmerald">#046307</color>
+    <color name="deepMoss">#355E3B</color>
+    <color name="deepChocolate">#2E1503</color>
+
+    <!-- Neon Colors -->
+    <color name="neonPink">#FF6EC7</color>
+    <color name="neonGreen">#39FF14</color>
+    <color name="neonBlue">#1F51FF</color>
+    <color name="neonOrange">#FF9933</color>
+    <color name="neonYellow">#FFFF00</color>
+    <color name="neonPurple">#BD33A4</color>
+
+    <!-- Nature Colors -->
+    <color name="leafGreen">#71AA34</color>
+    <color name="mossGreen">#8A9A5B</color>
+    <color name="oceanTeal">#469990</color>
+    <color name="skyAzure">#87CEEB</color>
+    <color name="sunsetOrange">#FD5E53</color>
+    <color name="sandBeige">#F5DEB3</color>
+    <color name="pebbleGrey">#9E9E9E</color>
+    <color name="barkBrown">#966F33</color>
+
+    <!-- Material Design Key Colors -->
+    <color name="materialRed">#F44336</color>
+    <color name="materialBlue">#2196F3</color>
+    <color name="materialGreen">#4CAF50</color>
+    <color name="materialYellow">#FFEB3B</color>
+    <color name="materialOrange">#FF9800</color>
+    <color name="materialPurple">#9C27B0</color>
+
 </resources>
