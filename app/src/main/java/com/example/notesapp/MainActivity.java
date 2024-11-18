@@ -34,11 +34,6 @@ public class MainActivity extends AppCompatActivity {
         addNoteBtn= findViewById(R.id.idBtnAddNote);
         readNoteBtn = findViewById(R.id.idBtnReadAllNotes);
 
-        //Get current date and time
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a",
-                Locale.getDefault());
-        String currentDateTime = dateFormat.format(new Date());
-        dateModified.setText(currentDateTime);
 
         //Pass context to DBHandler
         dbHandler = new DBHandler(MainActivity.this);
@@ -52,20 +47,20 @@ public class MainActivity extends AppCompatActivity {
                 String noteTitle = titleEdit.getText().toString();
                 String noteText = textEdit.getText().toString();
 
-                //Update current date and time
-                SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a",
-                        Locale.getDefault());
-                String currentDateTime = dateFormat.format(new Date());
-                dateModified.setText(currentDateTime);
-
                 //Make sure there's input in at least one of the fields
                 if (noteTitle.isEmpty() || noteText.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please enter a title or text for the note.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
+                //Update current date and time
+                SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a",
+                        Locale.getDefault());
+                String currentDateTime = dateFormat.format(new Date());
+                dateModified.setText(currentDateTime);
+
                 //Call addNewNote method from DBHandler and pass the input
-                dbHandler.addNewNote(noteTitle, noteText);
+                dbHandler.addNewNote(noteTitle, noteText, currentDateTime);
 
                 // after adding the data we are displaying a toast message.
                 Toast.makeText(MainActivity.this, "Note has been added.", Toast.LENGTH_SHORT).show();

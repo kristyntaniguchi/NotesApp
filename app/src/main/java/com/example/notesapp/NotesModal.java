@@ -22,7 +22,7 @@ public class NotesModal {
     public void setId(int id) {this.id = id;}
 
     //Constructor
-    public NotesModal(String noteTitle, String noteText, String dateCreated) {
+    public NotesModal(String noteTitle, String noteText, String dateModified) {
         this.noteTitle = noteTitle;
         this.noteText = noteText;
         this.dateModified = dateModified;

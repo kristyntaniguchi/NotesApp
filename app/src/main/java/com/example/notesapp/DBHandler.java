@@ -52,9 +52,11 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
+
     //Add a new note. Date created and date modified are set automatically and don't need to be
     // passed in.
-    public void addNewNote(String title, String text) {
+    public void addNewNote(String title, String text, String dateModified) {
+
 
         //Create db variable
         SQLiteDatabase db = this.getWritableDatabase();
@@ -65,6 +67,7 @@ public class DBHandler extends SQLiteOpenHelper {
         //Pass values with their key and value pair
         values.put(TITLE_COL, title);
         values.put(TEXT_COL, text);
+        values.put(DATE_MODIFIED_COL, dateModified);
 
         //Insert the values into the table
         db.insert(TABLE_NAME, null, values);
@@ -73,9 +76,8 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }//End of addNewNote()
 
-
     //Read all of the notes
-    public ArrayList<NotesModal> readNotes(){
+    public ArrayList<NotesModal> readNotes() {
         //Create the database to read from
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -86,22 +88,21 @@ public class DBHandler extends SQLiteOpenHelper {
         ArrayList<NotesModal> notesModalArrayList = new ArrayList<>();
 
         //Move cursor to the first position
-        if(cursor.moveToFirst()){
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 //Create a new notes modal object and add in the input
                 notesModalArrayList.add(new NotesModal(
                         cursor.getString(1),
                         cursor.getString(2),
-                        cursor.getString(3)
-                ));
+                        cursor.getString(3)));
 
-            }while(cursor.moveToNext());
+            }
+            while (cursor.moveToNext());
         }
         //Close the cursor and return the array list
         cursor.close();
         return notesModalArrayList;
     }//End of ArrayList<NotesModal> readNotes()
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -109,4 +110,6 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
+
 }
