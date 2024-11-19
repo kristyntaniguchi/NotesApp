@@ -70,9 +70,6 @@ public class UpdateNoteActivity extends AppCompatActivity {
                 dbHandler.updateNote(updatedNoteTitle, titleEdit.getText().toString(),
                         textEdit.getText().toString(), dateModifiedText.getText().toString());
 
-                //Display a toast message that the note has been updated
-                Toast.makeText(UpdateNoteActivity.this, "Note Updated..", Toast.LENGTH_SHORT).show();
-
             }//End of onClick()
 
         });//End of updateNoteBtn.setOnClickListener()
@@ -92,9 +89,6 @@ public class UpdateNoteActivity extends AppCompatActivity {
                 //Update the note with the updatedNote values
                 dbHandler.updateNote(updatedNoteTitle, titleEdit.getText().toString(),
                         textEdit.getText().toString(), dateModifiedText.getText().toString());
-
-                //Display a toast message that the note has been updated
-                Toast.makeText(UpdateNoteActivity.this, "Note Updated..", Toast.LENGTH_SHORT).show();
 
                 //Open a new activity with intent.
                 //Want to move from the UpdateNoteActivity to the ViewNotes activity.
