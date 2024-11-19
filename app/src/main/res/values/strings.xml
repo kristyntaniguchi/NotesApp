@@ -6,4 +6,8 @@
     <string name="note_text_hint">Text</string>
     <string name="add_note_button">Done</string>
     <string name="back_to_list_button">All Notes</string>
+
+
+    <!--Icons-->
+    <string name ="fa_trash_o">&#xf014;</string>
 </resources>

@@ -10,7 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 //Adapter class for the recycler view
 public class NoteRVAdapter extends RecyclerView.Adapter<NoteRVAdapter.ViewHolder> {
@@ -37,10 +44,26 @@ public class NoteRVAdapter extends RecyclerView.Adapter<NoteRVAdapter.ViewHolder
         //Get the note at the position
         NotesModal note = notesModalArrayList.get(position);
 
+        //Use try catch to handle parsing exceptions
+        try {
+            // Parse the original string to a Date
+            SimpleDateFormat inputFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a", Locale.getDefault());
+            Date date = inputFormat.parse(note.getDateModified());
+
+            // Convert Date back to String in desired format
+            SimpleDateFormat outputFormat = new SimpleDateFormat("MM/dd/yy", Locale.getDefault());
+            String formattedDate = outputFormat.format(date);
+
+            holder.dateModifiedTV.setText(formattedDate);
+        } catch (ParseException e) {
+            // If parsing fails, use original date string
+            holder.dateModifiedTV.setText(note.getDateModified());
+        }
+
         //Set the text of the text views
         holder.titleTV.setText(note.getNoteTitle());
         holder.textTV.setText(note.getNoteText());
-        holder.dateModifiedTV.setText(note.getDateModified());
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -124,6 +124,18 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }//End of updateCourse()
 
+    //Delete a note from the database
+    public void deleteNote (String noteTitle) {
+        //Create a database to write to
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //Delete the note from the table
+        db.delete(TABLE_NAME, TITLE_COL + " = ?", new String[]{noteTitle});
+
+        //Close the database
+        db.close();
+    }//End of deleteNote()
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // this method is called to check if the table exists already.

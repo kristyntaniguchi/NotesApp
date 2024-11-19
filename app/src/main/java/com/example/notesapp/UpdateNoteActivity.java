@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class UpdateNoteActivity extends AppCompatActivity {
     private EditText titleEdit, textEdit;
     private TextView dateModifiedText;
     private Button updateNoteBtn, readAllNotesBtn;
+    private ImageButton deleteNoteBtn;
     private DBHandler dbHandler;
     //Create strings for the updated title, text, and date of the note.
     String updatedNoteTitle, updatedNoteText, updatedNoteDateModified;
@@ -36,6 +38,7 @@ public class UpdateNoteActivity extends AppCompatActivity {
         updateNoteBtn = findViewById(R.id.idBtnUpdateNote);
         //readAllNotesBtn saves changes and takes the user to the read all notes activity.
         readAllNotesBtn = findViewById(R.id.idBtnReadAllNotesUpdate);
+        deleteNoteBtn = findViewById(R.id.idBtnDeleteNoteRv);
 
         //Initialize dbHandler
         dbHandler = new DBHandler(UpdateNoteActivity.this);
@@ -97,6 +100,26 @@ public class UpdateNoteActivity extends AppCompatActivity {
 
             }
         });//End of readNotesBtn.setOnClickListener()
+
+        //Deletes the current note
+        deleteNoteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Call method to delete the note
+                dbHandler.deleteNote(updatedNoteTitle);
+
+                //Display a toast message that the note has been deleted
+                Toast.makeText(UpdateNoteActivity.this, "Note Deleted..", Toast.LENGTH_SHORT).show();
+
+                //Open a new activity with intent.
+                //Want to move from the UpdateNoteActivity to the ViewNotes activity.
+                Intent i = new Intent(UpdateNoteActivity.this, ViewNotes.class);
+                startActivity(i);
+
+            }
+        });//End of deleteNoteBtn.setOnClickListener()
+
+
     }//End of onCreate()
 
 }//End of UpdateNoteActivity class
