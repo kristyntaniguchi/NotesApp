@@ -16,6 +16,8 @@
         android:padding="0dp"
         android:weightSum="3">
 
+        <!--(Android Material Design Button Style Design | DigitalOcean, 2024). I didn't copy it directly but used the style widget -->
+        <!--(Icons  |  Android Developers, 2024)-->
         <Button
             android:id="@+id/idBtnReadAllNotes"
             style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -50,6 +52,10 @@
             android:layout_weight="1"/>
 
         <!--Button to add a new note-->
+        <!--
+            (annulata2402, 2021)
+            (Android Material Design Button Style Design | DigitalOcean, 2024). I didn't copy it directly but used the style widget
+        -->
         <Button
             android:id="@+id/idBtnAddNote"
             style="@style/Widget.MaterialComponents.Button.TextButton"

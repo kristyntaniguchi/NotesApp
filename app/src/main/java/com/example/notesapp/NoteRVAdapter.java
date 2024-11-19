@@ -47,6 +47,7 @@ public class NoteRVAdapter extends RecyclerView.Adapter<NoteRVAdapter.ViewHolder
         //Use try catch to handle parsing exceptions
         try {
             // Parse the original string to a Date
+            //(adityamshidlyali, 2021)
             SimpleDateFormat inputFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a", Locale.getDefault());
             Date date = inputFormat.parse(note.getDateModified());
 

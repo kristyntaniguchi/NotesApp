@@ -8,27 +8,23 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 
+//DBHandler is a class that extends SQLiteOpenHelper and is used to create the database and tables.
 public class DBHandler extends SQLiteOpenHelper {
 
     //Database name
     private static final String DB_NAME = "notesDb";
-
     //DB version
     private static final int DB_VERSION = 1;
-
     //Table name
     private static final String TABLE_NAME = "myNotes";
 
     //Columns
     //Id
     private static final String ID_COL = "id";
-
     //Note title
     private static final String TITLE_COL = "title";
-
     //Note text
     private static final String TEXT_COL = "text";
-
     //Date last updated
     private static final String DATE_MODIFIED_COL = "dateModified";
 
@@ -36,9 +32,9 @@ public class DBHandler extends SQLiteOpenHelper {
     //Constructor
     public DBHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
-    }
+    }//End of Constructor
 
-    //Create db
+    //Create the db
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Set column names with sqlite query
@@ -50,14 +46,12 @@ public class DBHandler extends SQLiteOpenHelper {
 
         //Execute the sql query
         db.execSQL(query);
-    }
+    }//End of onCreate()
 
 
     //Add a new note. Date created and date modified are set automatically and don't need to be
     // passed in.
     public void addNewNote(String title, String text, String dateModified) {
-
-
         //Create db variable
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -76,7 +70,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }//End of addNewNote()
 
-    //Read all of the notes
+    //Read all of the notes saved in the db
     public ArrayList<NotesModal> readNotes() {
         //Create the database to read from
         SQLiteDatabase db = this.getReadableDatabase();
@@ -141,7 +135,7 @@ public class DBHandler extends SQLiteOpenHelper {
         // this method is called to check if the table exists already.
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
-    }
+    }//End of onUpgrade()
 
 
 }

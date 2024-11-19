@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+//This class runs when the user wants to update a note.
 public class UpdateNoteActivity extends AppCompatActivity {
     //Create variables for our edit text, button and dbhandler.
     private EditText titleEdit, textEdit;
@@ -53,7 +54,8 @@ public class UpdateNoteActivity extends AppCompatActivity {
         textEdit.setText(updatedNoteText);
         dateModifiedText.setText(updatedNoteDateModified);
 
-        //Add an onClickListener to the updateNoteBtn
+        //Add an onClickListener to the updateNoteBtn.
+        //Save button in the update note view.
         updateNoteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,12 +77,13 @@ public class UpdateNoteActivity extends AppCompatActivity {
 
         });//End of updateNoteBtn.setOnClickListener()
 
-        //Reads all notes
+        //The < All notes button saves changes and goes to the read all notes activity.
         readAllNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Save the changes and go to the read all notes activity.
                 //Update current date and time
+                //(adityamshidlyali, 2021)
                 SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a",
                         Locale.getDefault());
                 updatedNoteDateModified = dateFormat.format(new Date());
@@ -101,7 +104,7 @@ public class UpdateNoteActivity extends AppCompatActivity {
             }
         });//End of readNotesBtn.setOnClickListener()
 
-        //Deletes the current note
+        //Deletes the current note and then opens up the MainActivity with all of the notes. a
         deleteNoteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+//MainActivity displays all notes in the database.
 public class MainActivity extends AppCompatActivity {
     //Create variables
     private ArrayList<NotesModal> notesModalArrayList;

@@ -81,6 +81,7 @@ public class AddNoteActivity extends AppCompatActivity {
                     startActivity(i);
                 }else{
 
+                    //(adityamshidlyali, 2021)
                     //Update current date and time
                     SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a",
                             Locale.getDefault());

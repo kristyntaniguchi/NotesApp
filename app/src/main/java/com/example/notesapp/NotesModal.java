@@ -1,6 +1,6 @@
 package com.example.notesapp;
 
-//This class displays all of the notes in the database.
+//NotesModal is the model for the notes object.
 public class NotesModal {
     //Declare variables
     private String noteTitle;
