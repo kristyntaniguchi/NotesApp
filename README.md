@@ -22,7 +22,7 @@ Notes App is set to automatically open the complete list of user notes.  Users c
 
 ## Sources:
 ### Tutorials Used
-- GeeksforGeeks. (2024, October 8). How to Create and Add Data to SQLite Database in Android? GeeksforGeeks. https://doi.org/10222220239/sqlitedata1
+- GeeksforGeeks. (2024, October 8). How to Create and Add Data to SQLite Database in Android? GeeksforGeeks. https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
 - GeeksforGeeks. (2024, October 8). How to Read Data from SQLite Database in Android? GeeksforGeeks. https://www.geeksforgeeks.org/how-to-read-data-from-sqlite-database-in-android/
 - GeeksforGeeks. (2023, January 3). How to Update Data to SQLite Database in Android? GeeksforGeeks. https://www.geeksforgeeks.org/how-to-update-data-to-sqlite-database-in-android/
 - GeeksforGeeks. (2022, December 21). How to Delete Data in SQLite Database in Android? GeeksforGeeks. https://www.geeksforgeeks.org/how-to-delete-data-in-sqlite-database-in-android/
