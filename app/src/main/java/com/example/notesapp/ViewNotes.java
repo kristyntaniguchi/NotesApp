@@ -1,6 +1,9 @@
 package com.example.notesapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +17,7 @@ public class ViewNotes extends AppCompatActivity {
     private DBHandler dbHandler;
     private NoteRVAdapter noteRVAdapter;
     private RecyclerView notesRV;
+    private ImageButton addNoteBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class ViewNotes extends AppCompatActivity {
         //Initialize variables
         notesRV = findViewById(R.id.idRvNotes);
         dbHandler = new DBHandler(ViewNotes.this);
+        addNoteBtn = findViewById(R.id.idBtnAddNewNoteVN);
 
         //Get the array list from dbHandler
         notesModalArrayList = dbHandler.readNotes();
@@ -36,6 +41,16 @@ public class ViewNotes extends AppCompatActivity {
 
         //Set adapter to recycler view
         notesRV.setAdapter(noteRVAdapter);
+
+        addNoteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Start AddNote activity
+                //Open a new activity with intent.  Want to move from MainActivity to ViewNotes
+                Intent i = new Intent(ViewNotes.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
     }//End of onCreate()
 
 

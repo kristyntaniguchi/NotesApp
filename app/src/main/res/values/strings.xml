@@ -4,8 +4,9 @@
     <string name="date_modified">Last modified: </string>
     <string name="note_title_hint">Title</string>
     <string name="note_text_hint">Text</string>
-    <string name="add_note_button">Done</string>
+    <string name="add_note_button">Save</string>
     <string name="back_to_list_button">All Notes</string>
+    <string name="notes">Notes</string>
 
 
     <!--Icons-->

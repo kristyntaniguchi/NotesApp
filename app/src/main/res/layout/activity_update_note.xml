@@ -8,23 +8,31 @@
     tools:context=".UpdateNoteActivity">
 
     <!--Top bar-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="0dp">
+        android:weightSum="3">
 
         <!--Read all notes-->
         <Button
             android:id="@+id/idBtnReadAllNotesUpdate"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:layout_gravity="start|center"
             android:layout_margin="5dp"
             android:text="@string/back_to_list_button"
             android:textAllCaps="false"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            android:drawableLeft="@drawable/arrow_back_24"
+            />
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
 
         <TextView
             android:id="@+id/idTvDateModifiedUpdate"
@@ -33,20 +41,28 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/date_modified"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"/>
 
         <!--Button to delete note-->
         <ImageButton
             android:id="@+id/idBtnDeleteNoteRv"
-            android:src="@drawable/trash30"
+            android:src="@drawable/delete_24"
             android:backgroundTint="@android:color/transparent"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="0dp"/>
 
         <!--Button to update note-->
         <Button
             android:id="@+id/idBtnUpdateNote"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:layout_gravity="end|center"
@@ -78,7 +94,7 @@
                 android:id="@+id/idEdtTitleUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
                 android:hint="@string/note_title_hint"
                 android:textSize="24sp" />
 
@@ -88,6 +104,7 @@
                 android:id="@+id/idEdtTextUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:hint="@string/note_text_hint"
                 android:textSize="18sp" />
 

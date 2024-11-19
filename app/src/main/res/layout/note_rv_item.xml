@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:elevation="8dp"
+    android:orientation="vertical"
     app:cardCornerRadius="4dp">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:orientation="horizontal"
-        android:weightSum="5">
+        android:elevation="8dp"
+        app:cardCornerRadius="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:orientation="vertical"
-            android:layout_weight="4">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/idTVTitleRv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
-                android:text="Title"
+                android:text="@string/note_title_hint"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -34,16 +33,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-       >
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/idTvDateModifiedRv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:paddingEnd="10dp"
-                    android:text="Date"
+                    android:text="@string/date_modified"
                     android:textColor="@color/black" />
 
                 <TextView
@@ -52,15 +49,13 @@
                     android:layout_height="match_parent"
                     android:layout_weight="4"
                     android:padding="3dp"
-                    android:text="Text"
+                    android:text="@string/note_text_hint"
                     android:textColor="@color/black" />
 
             </LinearLayout>
 
+
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-
-
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>

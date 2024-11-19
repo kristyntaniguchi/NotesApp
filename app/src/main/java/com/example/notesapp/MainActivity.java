@@ -61,22 +61,39 @@ public class MainActivity extends AppCompatActivity {
 
                 //Call addNewNote method from DBHandler and pass the input
                 dbHandler.addNewNote(noteTitle, noteText, currentDateTime);
-
-                // after adding the data we are displaying a toast message.
-                Toast.makeText(MainActivity.this, "Note has been added.", Toast.LENGTH_SHORT).show();
-                titleEdit.setText("");
-                textEdit.setText("");
             }
         });//End of addNoteBtn.setOnClickListener()
 
 
-        //Reads all notes
+        //Saves new note and opens a new activity to view all notes
         readNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Open a new activity with intent.  Want to move from MainActivity to ViewNotes
-                Intent i = new Intent(MainActivity.this, ViewNotes.class);
-                startActivity(i);
+                //Get input from text edits
+                String noteTitle = titleEdit.getText().toString();
+                String noteText = textEdit.getText().toString();
+
+                //If there's nothing in the note, open the ViewNotes activity without adding a new
+                // note
+                if (noteTitle.isEmpty() && noteText.isEmpty()) {
+                    Intent i = new Intent(MainActivity.this, ViewNotes.class);
+                    startActivity(i);
+                }else{
+
+                    //Update current date and time
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a",
+                            Locale.getDefault());
+                    String currentDateTime = dateFormat.format(new Date());
+                    dateModified.setText(currentDateTime);
+
+                    //Call addNewNote method from DBHandler and pass the input
+                    dbHandler.addNewNote(noteTitle, noteText, currentDateTime);
+
+                    //Open a new activity with intent.  Want to move from MainActivity to ViewNotes
+                    Intent i = new Intent(MainActivity.this, ViewNotes.class);
+                    startActivity(i);
+                }
+
             }
         });//End of readNotesBtn.setOnClickListener()
 
