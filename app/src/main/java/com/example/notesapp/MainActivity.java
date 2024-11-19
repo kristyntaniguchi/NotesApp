@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     // creating variables for our edittext, button and dbhandler
     private EditText titleEdit, textEdit;
     private TextView dateModified;
-    private Button addNoteBtn, readNoteBtn;
+    private Button addNoteBtn, readNotesBtn;
     private DBHandler dbHandler;
 
     @Override
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         textEdit = findViewById(R.id.idEdtText);
         dateModified = findViewById(R.id.idTvDateModified);
         addNoteBtn= findViewById(R.id.idBtnAddNote);
-        readNoteBtn = findViewById(R.id.idBtnReadAllNotes);
+        readNotesBtn = findViewById(R.id.idBtnReadAllNotes);
 
 
         //Pass context to DBHandler
@@ -70,10 +70,11 @@ public class MainActivity extends AppCompatActivity {
         });//End of addNoteBtn.setOnClickListener()
 
 
-        readNoteBtn.setOnClickListener(new View.OnClickListener() {
+        //Reads all notes
+        readNotesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Open a new activity with intent.  ViewNotes in the Java class.
+                //Open a new activity with intent.  Want to move from MainActivity to ViewNotes
                 Intent i = new Intent(MainActivity.this, ViewNotes.class);
                 startActivity(i);
             }

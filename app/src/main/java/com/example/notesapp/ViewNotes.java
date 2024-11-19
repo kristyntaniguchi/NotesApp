@@ -28,7 +28,7 @@ public class ViewNotes extends AppCompatActivity {
         notesModalArrayList = dbHandler.readNotes();
 
         //Pass the array list to the adapter
-        noteRVAdapter = new NoteRVAdapter(ViewNotes.this, notesModalArrayList);
+        noteRVAdapter = new NoteRVAdapter( notesModalArrayList, ViewNotes.this);
 
         //Set layout manager to recycler view
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ViewNotes.this);

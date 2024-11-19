@@ -104,6 +104,26 @@ public class DBHandler extends SQLiteOpenHelper {
         return notesModalArrayList;
     }//End of ArrayList<NotesModal> readNotes()
 
+    //Update a note
+    public void updateNote(String originalTitle, String noteTitle, String noteText,
+                             String dateModified) {
+        //Create a database to write to
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //Create content values
+        ContentValues values = new ContentValues();
+
+        //Pass values with their key and value pair
+        values.put(TITLE_COL, noteTitle);
+        values.put(TEXT_COL, noteText);
+        values.put(DATE_MODIFIED_COL, dateModified);
+
+        //Update the values in the table
+        db.update(TABLE_NAME, values, TITLE_COL + " = ?", new String[]{originalTitle});
+        //Close the database
+        db.close();
+    }//End of updateCourse()
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // this method is called to check if the table exists already.
