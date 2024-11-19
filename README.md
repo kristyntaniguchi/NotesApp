@@ -17,6 +17,11 @@ My Notes App is a simple application that allows users to create, edit, and mana
 ## Use
 Notes App is set to automatically open the complete list of user notes.  Users can select a note to view more details, alter its title or text, or delete the note.  Back on the home page, in the top right corner, is a button to create a new note.  
 
+## Demo
+
+https://github.com/user-attachments/assets/f013844d-92b1-40fe-8875-383c6f66be61
+
+
 ## Testing Notes
 - I used the Pixel 2 API 34 emulator to run testing.  Unfortunately, using a more current model would cause my laptop to crash every 30 – 40 minutes. 
 
