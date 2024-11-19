@@ -95,7 +95,7 @@ public class UpdateNoteActivity extends AppCompatActivity {
 
                 //Open a new activity with intent.
                 //Want to move from the UpdateNoteActivity to the ViewNotes activity.
-                Intent i = new Intent(UpdateNoteActivity.this, ViewNotes.class);
+                Intent i = new Intent(UpdateNoteActivity.this, MainActivity.class);
                 startActivity(i);
 
             }
@@ -113,7 +113,7 @@ public class UpdateNoteActivity extends AppCompatActivity {
 
                 //Open a new activity with intent.
                 //Want to move from the UpdateNoteActivity to the ViewNotes activity.
-                Intent i = new Intent(UpdateNoteActivity.this, ViewNotes.class);
+                Intent i = new Intent(UpdateNoteActivity.this, MainActivity.class);
                 startActivity(i);
 
             }

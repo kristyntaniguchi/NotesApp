@@ -3,24 +3,21 @@ package com.example.notesapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-    // creating variables for our edittext, button and dbhandler
-    private EditText titleEdit, textEdit;
-    private TextView dateModified;
-    private Button addNoteBtn, readNotesBtn;
+    //Create variables
+    private ArrayList<NotesModal> notesModalArrayList;
     private DBHandler dbHandler;
+    private NoteRVAdapter noteRVAdapter;
+    private RecyclerView notesRV;
+    private ImageButton addNoteBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,75 +25,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Initialize variables
-        titleEdit = findViewById(R.id.idEdtTitle);
-        textEdit = findViewById(R.id.idEdtText);
-        dateModified = findViewById(R.id.idTvDateModified);
-        addNoteBtn= findViewById(R.id.idBtnAddNote);
-        readNotesBtn = findViewById(R.id.idBtnReadAllNotes);
-
-
-        //Pass context to DBHandler
+        notesRV = findViewById(R.id.idRvNotes);
         dbHandler = new DBHandler(MainActivity.this);
+        addNoteBtn = findViewById(R.id.idBtnAddNewNoteVN);
 
-        //Click listener for addNoteBtn
+        //Get the array list from dbHandler
+        notesModalArrayList = dbHandler.readNotes();
+
+        //Pass the array list to the adapter
+        noteRVAdapter = new NoteRVAdapter( notesModalArrayList, MainActivity.this);
+
+        //Set layout manager to recycler view
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
+        notesRV.setLayoutManager(linearLayoutManager);
+
+        //Set adapter to recycler view
+        notesRV.setAdapter(noteRVAdapter);
+
         addNoteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //Get input from text edits
-                String noteTitle = titleEdit.getText().toString();
-                String noteText = textEdit.getText().toString();
-
-                //Make sure there's input in at least one of the fields
-                if (noteTitle.isEmpty() || noteText.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please enter a title or text for the note.", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                //Update current date and time
-                SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a",
-                        Locale.getDefault());
-                String currentDateTime = dateFormat.format(new Date());
-                dateModified.setText(currentDateTime);
-
-                //Call addNewNote method from DBHandler and pass the input
-                dbHandler.addNewNote(noteTitle, noteText, currentDateTime);
+                //Start AddNote activity
+                //Open a new activity with intent.  Want to move from MainActivity to ViewNotes
+                Intent i = new Intent(MainActivity.this, AddNoteActivity.class);
+                startActivity(i);
             }
-        });//End of addNoteBtn.setOnClickListener()
-
-
-        //Saves new note and opens a new activity to view all notes
-        readNotesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Get input from text edits
-                String noteTitle = titleEdit.getText().toString();
-                String noteText = textEdit.getText().toString();
-
-                //If there's nothing in the note, open the ViewNotes activity without adding a new
-                // note
-                if (noteTitle.isEmpty() && noteText.isEmpty()) {
-                    Intent i = new Intent(MainActivity.this, ViewNotes.class);
-                    startActivity(i);
-                }else{
-
-                    //Update current date and time
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy hh:mm a",
-                            Locale.getDefault());
-                    String currentDateTime = dateFormat.format(new Date());
-                    dateModified.setText(currentDateTime);
-
-                    //Call addNewNote method from DBHandler and pass the input
-                    dbHandler.addNewNote(noteTitle, noteText, currentDateTime);
-
-                    //Open a new activity with intent.  Want to move from MainActivity to ViewNotes
-                    Intent i = new Intent(MainActivity.this, ViewNotes.class);
-                    startActivity(i);
-                }
-
-            }
-        });//End of readNotesBtn.setOnClickListener()
-
-
+        });
     }//End of onCreate()
+
+
 }
